@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mansonware // Boot Sequence</title>
+
+<style>
+  body {
+    margin: 0;
+    background: black;
+    color: #00ff88;
+    font-family: monospace;
+    overflow: hidden;
+  }
+
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .boot {
+    padding: 40px;
+    white-space: pre-line;
+    font-size: 14px;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 10px;
+    background: #00ff88;
+    animation: blink 0.8s infinite;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  .center {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .btn {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #00ff88;
+    color: #00ff88;
+    text-decoration: none;
+  }
+
+  .btn:hover {
+    background: #00ff88;
+    color: black;
+  }
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="boot" id="boot"></div>
+
+<div class="center">
+  <h1>💀 Mansonware</h1>
+  <p>Cybersecurity • Linux • Automation • Ethical Hacking</p>
+
+  <a class="btn" href="https://github.com/Mansonware" target="_blank">
+    ACCESS GITHUB
+  </a>
+</div>
+
+<script>
+/* ===== MATRIX BACKGROUND ===== */
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let letters = "01MANS0NWAR3CYBERSECURITYLINUXHACK";
+letters = letters.split("");
+
+let fontSize = 14;
+let columns = canvas.width / fontSize;
+
+let drops = [];
+for (let x = 0; x < columns; x++) drops[x] = 1;
+
+function drawMatrix() {
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "#00ff88";
+  ctx.font = fontSize + "px monospace";
+
+  for (let i = 0; i < drops.length; i++) {
+    let text = letters[Math.floor(Math.random() * letters.length)];
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
+      drops[i] = 0;
+
+    drops[i]++;
+  }
+}
+setInterval(drawMatrix, 33);
+
+/* ===== BOOT SEQUENCE ===== */
+const lines = [
+"Booting Mansonware system...",
+"Loading modules: Linux ✓",
+"Loading modules: Networking ✓",
+"Loading modules: Python Automation ✓",
+"Initializing cybersecurity environment...",
+"Establishing secure shell...",
+"Access granted ✔",
+"Welcome, operator."
+];
+
+let i = 0;
+let boot = document.getElementById("boot");
+
+function typeLine() {
+  if (i < lines.length) {
+    boot.innerHTML += lines[i] + "\\n";
+    i++;
+    setTimeout(typeLine, 800);
+  } else {
+    boot.innerHTML += "\\n> system ready _";
+  }
+}
+
+typeLine();
+</script>
+
+</body>
+</html>
