@@ -3,190 +3,180 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio de Mansonware — Cybersecurity, Linux, Automação e Ethical Hacking.">
+  <meta name="description" content="Portfólio de Mansonware — Cybersecurity, Linux, Automação e Ethical Hacking. Terminal interativo, efeitos glitch e design imersivo.">
   <meta name="author" content="Mansonware">
   <meta name="theme-color" content="#00ff88">
-  <title>Mansonware // Boot Sequence</title>
-
-  <style>
-    :root {
-      --bg: #000000;
-      --accent: #00ff88;
-      --font: "Courier New", monospace;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: var(--bg);
-      color: var(--accent);
-      font-family: var(--font);
-      overflow-x: hidden;
-    }
-
-    canvas#matrix {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-
-    .boot {
-      padding: clamp(20px, 5vw, 40px);
-      white-space: pre-line;
-      font-size: clamp(12px, 2.5vw, 14px);
-      line-height: 1.6;
-      text-shadow: 0 0 6px var(--accent);
-      min-height: 220px;
-    }
-
-    .cursor {
-      display: inline-block;
-      width: 9px;
-      height: 1em;
-      vertical-align: text-bottom;
-      background: var(--accent);
-      animation: blink 0.8s steps(1) infinite;
-    }
-
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
-
-    .center {
-      text-align: center;
-      margin-top: 24px;
-      padding: 0 20px 48px;
-    }
-
-    .center h1 {
-      font-size: clamp(28px, 7vw, 44px);
-      margin: 0 0 8px;
-      text-shadow: 0 0 12px var(--accent);
-    }
-
-    .center p {
-      opacity: 0.85;
-      letter-spacing: 1px;
-      margin: 0 0 24px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 12px 24px;
-      border: 1px solid var(--accent);
-      border-radius: 4px;
-      color: var(--accent);
-      text-decoration: none;
-      letter-spacing: 1px;
-      transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .btn:hover,
-    .btn:focus-visible {
-      background: var(--accent);
-      color: var(--bg);
-      box-shadow: 0 0 16px var(--accent);
-      outline: none;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .cursor { animation: none; }
-    }
-  </style>
+  <title>Mansonware // root@portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <!-- ===== BACKGROUNDS ===== -->
   <canvas id="matrix" aria-hidden="true"></canvas>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="glow-cursor" id="glowCursor" aria-hidden="true"></div>
+
+  <!-- ===== BOOT / LOADER ===== -->
+  <div class="boot-screen" id="bootScreen">
+    <div class="boot-log" id="bootLog" role="log" aria-live="polite"></div>
+    <div class="boot-bar"><span id="bootProgress"></span></div>
+  </div>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-brand">root@mansonware<span class="cursor">_</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">./sobre</a></li>
+      <li><a href="#skills">./skills</a></li>
+      <li><a href="#terminal">./terminal</a></li>
+      <li><a href="#projects">./projetos</a></li>
+      <li><a href="#contact">./contato</a></li>
+    </ul>
+  </nav>
 
   <main>
-    <div class="boot" id="boot" role="log" aria-live="polite"></div>
-
-    <div class="center">
-      <h1>💀 Mansonware</h1>
-      <p>Cybersecurity • Linux • Automation • Ethical Hacking</p>
-
-      <a class="btn" href="https://github.com/Mansonware" target="_blank" rel="noopener noreferrer">
-        ACCESS GITHUB
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="hero">
+      <div class="hero-inner reveal">
+        <p class="hero-pre">$ ./initialize --user=operator</p>
+        <h1 class="glitch" data-text="MANSONWARE">MANSONWARE</h1>
+        <p class="hero-role"><span id="typedRole"></span><span class="cursor">_</span></p>
+        <p class="hero-sub">Cybersecurity • Linux • Automation • Ethical Hacking</p>
+        <div class="hero-actions">
+          <a href="#terminal" class="btn btn-primary">> abrir terminal</a>
+          <a href="#projects" class="btn">ver projetos</a>
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Rolar para baixo">
+        <span></span>
       </a>
-    </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats reveal">
+      <div class="stat"><span class="stat-num" data-target="128">0</span><span class="stat-label">commits/mês</span></div>
+      <div class="stat"><span class="stat-num" data-target="42">0</span><span class="stat-label">scripts</span></div>
+      <div class="stat"><span class="stat-num" data-target="7">0</span><span class="stat-label">CTFs</span></div>
+      <div class="stat"><span class="stat-num" data-target="99">0</span><span class="stat-label">% uptime</span></div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section">
+      <h2 class="section-title reveal"><span>01.</span> ./sobre</h2>
+      <div class="about-grid">
+        <div class="card reveal">
+          <p>Operador focado em <strong>segurança ofensiva e defensiva</strong>, automação em Linux e desenvolvimento de ferramentas. Vivo no terminal — entre scripts em Python, redes e a busca constante por entender como as coisas <em>realmente</em> funcionam por baixo do capô.</p>
+          <p>Este portfólio é parte estética, parte playground: explore o terminal abaixo, passe o mouse (ou o dedo) nos cards e veja a página responder.</p>
+        </div>
+        <ul class="about-meta reveal">
+          <li><span>&gt;</span> base: <strong>Linux</strong></li>
+          <li><span>&gt;</span> shell: <strong>zsh + tmux</strong></li>
+          <li><span>&gt;</span> foco: <strong>Red &amp; Blue Team</strong></li>
+          <li><span>&gt;</span> status: <strong class="online">online</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section">
+      <h2 class="section-title reveal"><span>02.</span> ./skills</h2>
+      <div class="skills" id="skills-list">
+        <div class="skill reveal" data-level="92">
+          <div class="skill-head"><span>Linux / Bash</span><span class="skill-pct">0%</span></div>
+          <div class="skill-bar"><i></i></div>
+        </div>
+        <div class="skill reveal" data-level="88">
+          <div class="skill-head"><span>Python / Automation</span><span class="skill-pct">0%</span></div>
+          <div class="skill-bar"><i></i></div>
+        </div>
+        <div class="skill reveal" data-level="80">
+          <div class="skill-head"><span>Networking</span><span class="skill-pct">0%</span></div>
+          <div class="skill-bar"><i></i></div>
+        </div>
+        <div class="skill reveal" data-level="75">
+          <div class="skill-head"><span>Pentesting / Recon</span><span class="skill-pct">0%</span></div>
+          <div class="skill-bar"><i></i></div>
+        </div>
+        <div class="skill reveal" data-level="70">
+          <div class="skill-head"><span>Web Security</span><span class="skill-pct">0%</span></div>
+          <div class="skill-bar"><i></i></div>
+        </div>
+        <div class="skill reveal" data-level="65">
+          <div class="skill-head"><span>Cloud / Docker</span><span class="skill-pct">0%</span></div>
+          <div class="skill-bar"><i></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TERMINAL ===== -->
+    <section id="terminal" class="section">
+      <h2 class="section-title reveal"><span>03.</span> ./terminal</h2>
+      <p class="section-hint reveal">Terminal interativo — digite <code>help</code> e dê Enter. Funciona no toque também.</p>
+      <div class="terminal reveal" id="term">
+        <div class="term-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="term-title">operator@mansonware: ~</span>
+        </div>
+        <div class="term-body" id="termBody">
+          <div class="term-line">Bem-vindo ao shell do Mansonware. Digite <span class="hl">help</span> para começar.</div>
+        </div>
+        <div class="term-input-row">
+          <span class="term-prompt">operator@mansonware:~$</span>
+          <input id="termInput" class="term-input" autocomplete="off" autocapitalize="off"
+                 spellcheck="false" aria-label="Entrada do terminal" placeholder="digite um comando...">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section">
+      <h2 class="section-title reveal"><span>04.</span> ./projetos</h2>
+      <div class="projects">
+        <article class="tilt reveal" tabindex="0">
+          <div class="tilt-inner">
+            <span class="proj-tag">automation</span>
+            <h3>recon-suite</h3>
+            <p>Conjunto de scripts para reconhecimento automatizado: enumeração de subdomínios, portas e fingerprinting em um pipeline só.</p>
+            <div class="proj-stack"><span>Python</span><span>Bash</span><span>Nmap</span></div>
+          </div>
+        </article>
+        <article class="tilt reveal" tabindex="0">
+          <div class="tilt-inner">
+            <span class="proj-tag">defense</span>
+            <h3>sentinel-log</h3>
+            <p>Monitor de logs em tempo real com alertas de comportamento suspeito e dashboard no terminal via curses.</p>
+            <div class="proj-stack"><span>Python</span><span>Linux</span><span>SIEM</span></div>
+          </div>
+        </article>
+        <article class="tilt reveal" tabindex="0">
+          <div class="tilt-inner">
+            <span class="proj-tag">tooling</span>
+            <h3>dotfiles</h3>
+            <p>Ambiente de operador pronto pra clonar: zsh, tmux, neovim e aliases afiados pra produtividade no shell.</p>
+            <div class="proj-stack"><span>zsh</span><span>tmux</span><span>nvim</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section contact">
+      <h2 class="section-title reveal"><span>05.</span> ./contato</h2>
+      <p class="reveal contact-lead">Quer trocar uma ideia, colaborar ou só dizer um <span class="hl">olá</span>?</p>
+      <div class="contact-links reveal">
+        <a class="btn btn-primary" href="https://github.com/Mansonware" target="_blank" rel="noopener noreferrer">GitHub →</a>
+        <a class="btn" href="mailto:mansonware0101@gmail.com">E-mail</a>
+      </div>
+    </section>
   </main>
 
-  <script>
-    "use strict";
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Mansonware — <span class="hl">root@portfolio</span>. Construído no terminal.</p>
+  </footer>
 
-    /* ===== MATRIX BACKGROUND ===== */
-    const canvas = document.getElementById("matrix");
-    const ctx = canvas.getContext("2d");
-
-    const FONT_SIZE = 14;
-    const CHARS = "01MANS0NWAR3CYBERSECURITYLINUXHACK".split("");
-    let drops = [];
-
-    function setupMatrix() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      const columns = Math.ceil(canvas.width / FONT_SIZE);
-      drops = new Array(columns).fill(1);
-    }
-
-    function drawMatrix() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = "#00ff88";
-      ctx.font = FONT_SIZE + "px monospace";
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = CHARS[Math.floor(Math.random() * CHARS.length)];
-        ctx.fillText(text, i * FONT_SIZE, drops[i] * FONT_SIZE);
-
-        if (drops[i] * FONT_SIZE > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-    }
-
-    setupMatrix();
-    setInterval(drawMatrix, 33);
-    window.addEventListener("resize", setupMatrix);
-
-    /* ===== BOOT SEQUENCE ===== */
-    const lines = [
-      "Booting Mansonware system...",
-      "Loading modules: Linux ✓",
-      "Loading modules: Networking ✓",
-      "Loading modules: Python Automation ✓",
-      "Initializing cybersecurity environment...",
-      "Establishing secure shell...",
-      "Access granted ✔",
-      "Welcome, operator."
-    ];
-
-    const boot = document.getElementById("boot");
-    let lineIndex = 0;
-
-    function typeLine() {
-      if (lineIndex < lines.length) {
-        boot.textContent += lines[lineIndex] + "\n";
-        lineIndex++;
-        setTimeout(typeLine, 800);
-      } else {
-        boot.textContent += "\n> system ready ";
-        const cursor = document.createElement("span");
-        cursor.className = "cursor";
-        boot.appendChild(cursor);
-      }
-    }
-
-    typeLine();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
