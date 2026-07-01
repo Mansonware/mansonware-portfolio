@@ -113,6 +113,7 @@ const isTouch = window.matchMedia("(hover: none)").matches;
         en.target.classList.add("in");
         // trigger skill bars
         if (en.target.classList.contains("skill")) animateSkill(en.target);
+        if (en.target.classList.contains("tilt")) en.target.classList.add("scan-in");
         io.unobserve(en.target);
       }
     });
@@ -124,12 +125,16 @@ function animateSkill(skill) {
   const level = +skill.dataset.level;
   const bar = skill.querySelector(".skill-bar i");
   const pct = skill.querySelector(".skill-pct");
+  bar.classList.add("animating");
   bar.style.width = level + "%";
   let n = 0;
   const t = setInterval(() => {
     n++;
     pct.textContent = n + "%";
-    if (n >= level) clearInterval(t);
+    if (n >= level) {
+      clearInterval(t);
+      bar.classList.remove("animating");
+    }
   }, 1200 / level);
 }
 
@@ -230,6 +235,7 @@ function animateSkill(skill) {
   const body = document.getElementById("termBody");
   const input = document.getElementById("termInput");
   const term = document.getElementById("term");
+  const hackFx = document.getElementById("hackFx");
   const history = [];
   let hPos = -1;
 
@@ -286,6 +292,11 @@ function animateSkill(skill) {
       "ACCESS GRANTED — você é um(a) hacker agora."
     ];
     let i = 0;
+    if (!reduceMotion && hackFx) {
+      hackFx.classList.remove("run");
+      void hackFx.offsetWidth;
+      hackFx.classList.add("run");
+    }
     (function next() {
       if (i < steps.length) { print(steps[i++], "hl"); setTimeout(next, 600); }
     })();
