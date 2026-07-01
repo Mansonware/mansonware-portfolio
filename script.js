@@ -294,6 +294,7 @@ function animateSkill(skill) {
     let i = 0;
     if (!reduceMotion && hackFx) {
       hackFx.classList.remove("run");
+      // force reflow so the same CSS animation can restart on repeated "hack"
       void hackFx.offsetWidth;
       hackFx.classList.add("run");
     }
