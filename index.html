@@ -1,192 +1,108 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio de Mansonware — Cybersecurity, Linux, Automação e Ethical Hacking. Terminal interativo, efeitos glitch e design imersivo.">
+  <meta name="description" content="Mansonware cria automações, bots para WhatsApp, vitrines online e sistemas web com inteligência artificial para negócios venderem mais.">
   <meta name="author" content="Mansonware">
-  <meta name="theme-color" content="#00ff88">
-  <meta property="og:title" content="Mansonware // root@portfolio">
-  <meta property="og:description" content="Portfólio de Mansonware — Cybersecurity, Linux, Automação e Ethical Hacking. Terminal interativo, efeitos glitch e design imersivo.">
-  <meta property="og:image" content="https://mansonware.github.io/mansonware-portfolio/favicon.svg">
+  <meta name="theme-color" content="#070a0f">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mansonware — Automação, IA e sistemas web">
+  <meta property="og:description" content="Soluções digitais práticas para automatizar atendimento, organizar operações e aumentar conversões.">
+  <meta property="og:image" content="https://mansonware.github.io/mansonware-portfolio/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://mansonware.github.io/mansonware-portfolio/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mansonware // root@portfolio">
-  <meta name="twitter:description" content="Portfólio de Mansonware — Cybersecurity, Linux, Automação e Ethical Hacking. Terminal interativo, efeitos glitch e design imersivo.">
-  <meta name="twitter:image" content="https://mansonware.github.io/mansonware-portfolio/favicon.svg">
-  <title>Mansonware // root@portfolio</title>
+  <meta name="twitter:title" content="Mansonware — Automação, IA e sistemas web">
+  <meta name="twitter:description" content="Soluções digitais práticas para automatizar atendimento, organizar operações e aumentar conversões.">
+  <meta name="twitter:image" content="https://mansonware.github.io/mansonware-portfolio/og-image.svg">
+  <title>Mansonware — Automação, IA e sistemas web</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="enhancements.css">
 </head>
-
 <body>
-  <!-- ===== BACKGROUNDS ===== -->
-  <canvas id="matrix" aria-hidden="true"></canvas>
-  <div class="scanlines" aria-hidden="true"></div>
-  <div class="hack-fx" id="hackFx" aria-hidden="true"></div>
-  <div class="glow-cursor" id="glowCursor" aria-hidden="true"></div>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="grid-layer" aria-hidden="true"></div>
 
-  <!-- ===== BOOT / LOADER ===== -->
-  <div class="boot-screen" id="bootScreen">
-    <div class="boot-log" id="bootLog" role="log" aria-live="polite"></div>
-    <div class="boot-bar"><span id="bootProgress"></span></div>
-  </div>
-
-  <!-- ===== NAV ===== -->
-  <nav class="nav" id="nav">
-    <a href="#hero" class="nav-brand">root@mansonware<span class="cursor">_</span></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about">./sobre</a></li>
-      <li><a href="#skills">./skills</a></li>
-      <li><a href="#terminal">./terminal</a></li>
-      <li><a href="#projects">./projetos</a></li>
-      <li><a href="#contact">./contato</a></li>
-    </ul>
-  </nav>
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a class="brand" href="#top" aria-label="Mansonware, início"><span class="brand-mark">M</span><span>MANSONWARE</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+      <div class="nav-menu" id="navMenu"><a href="#servicos">Serviços</a><a href="#projetos">Projetos</a><a href="#processo">Processo</a><a href="#sobre">Sobre</a></div>
+      <a class="button button-small nav-cta" href="https://wa.me/5512996335539?text=Ol%C3%A1%2C%20Manson.%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">Falar sobre projeto</a>
+    </nav>
+  </header>
 
   <main>
-    <!-- ===== HERO ===== -->
-    <section id="hero" class="hero">
-      <div class="hero-inner reveal">
-        <p class="hero-pre">$ ./initialize --user=operator</p>
-        <h1 class="glitch" data-text="MANSONWARE">MANSONWARE</h1>
-        <p class="hero-role"><span id="typedRole"></span><span class="cursor">_</span></p>
-        <p class="hero-sub">Cybersecurity • Linux • Automation • Ethical Hacking</p>
+    <section class="hero container">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span></span> Desenvolvimento • Automação • IA</div>
+        <h1>Transformo processos manuais em <strong>soluções digitais que vendem.</strong></h1>
+        <p class="hero-lead">Bots para WhatsApp, vitrines online, automações e sistemas web pensados para reduzir trabalho operacional e gerar mais oportunidades comerciais.</p>
         <div class="hero-actions">
-          <a href="#terminal" class="btn btn-primary">> abrir terminal</a>
-          <a href="#projects" class="btn">ver projetos</a>
+          <a class="button button-primary" href="https://wa.me/5512996335539?text=Ol%C3%A1%2C%20Manson.%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20uma%20an%C3%A1lise%20para%20o%20meu%20projeto." target="_blank" rel="noopener noreferrer">Solicitar uma análise <span>↗</span></a>
+          <a class="button button-ghost" href="#projetos">Ver projetos</a>
         </div>
+        <div class="hero-proof" aria-label="Diferenciais"><div><span class="status-dot"></span><strong>Disponível</strong> para novos projetos</div><div><strong>Mobile-first</strong> e orientado à conversão</div><div><strong>Segurança</strong> desde a arquitetura</div></div>
       </div>
-      <a href="#about" class="scroll-hint" aria-label="Rolar para baixo">
-        <span></span>
-      </a>
-    </section>
 
-    <!-- ===== STATS ===== -->
-    <section class="stats reveal">
-      <div class="stat"><span class="stat-num" data-target="128">0</span><span class="stat-label">commits/mês</span></div>
-      <div class="stat"><span class="stat-num" data-target="42">0</span><span class="stat-label">scripts</span></div>
-      <div class="stat"><span class="stat-num" data-target="7">0</span><span class="stat-label">CTFs</span></div>
-      <div class="stat"><span class="stat-num" data-target="99">0</span><span class="stat-label">% uptime</span></div>
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section id="about" class="section">
-      <h2 class="section-title reveal"><span>01.</span> ./sobre</h2>
-      <div class="about-grid">
-        <div class="card reveal">
-          <p>Operador focado em <strong>segurança ofensiva e defensiva</strong>, automação em Linux e desenvolvimento de ferramentas. Vivo no terminal — entre scripts em Python, redes e a busca constante por entender como as coisas <em>realmente</em> funcionam por baixo do capô.</p>
-          <p>Este portfólio é parte estética, parte playground: explore o terminal abaixo, passe o mouse (ou o dedo) nos cards e veja a página responder.</p>
-        </div>
-        <ul class="about-meta reveal">
-          <li><span>&gt;</span> base: <strong>Linux</strong></li>
-          <li><span>&gt;</span> shell: <strong>zsh + tmux</strong></li>
-          <li><span>&gt;</span> foco: <strong>Red &amp; Blue Team</strong></li>
-          <li><span>&gt;</span> status: <strong class="online">online</strong></li>
-        </ul>
+      <div class="hero-visual reveal" aria-label="Painel de soluções Mansonware">
+        <div class="visual-window"><div class="window-bar"><div class="window-dots"><span></span><span></span><span></span></div><span>mansonware / solution-stack</span><span class="window-live">LIVE</span></div><div class="window-content"><p class="code-label">// operação digital</p><div class="code-line"><span>01</span><strong>captar</strong><em>leads qualificados</em></div><div class="code-line"><span>02</span><strong>automatizar</strong><em>atendimento e follow-up</em></div><div class="code-line"><span>03</span><strong>converter</strong><em>com experiências melhores</em></div><div class="flow-card"><div class="flow-icon">↯</div><div><small>Fluxo ativo</small><b>WhatsApp → CRM → Venda</b></div><span class="flow-status">online</span></div></div></div>
       </div>
     </section>
 
-    <!-- ===== SKILLS ===== -->
-    <section id="skills" class="section">
-      <h2 class="section-title reveal"><span>02.</span> ./skills</h2>
-      <div class="skills" id="skills-list">
-        <div class="skill reveal" data-level="92">
-          <div class="skill-head"><span>Linux / Bash</span><span class="skill-pct">0%</span></div>
-          <div class="skill-bar"><i></i></div>
-        </div>
-        <div class="skill reveal" data-level="88">
-          <div class="skill-head"><span>Python / Automation</span><span class="skill-pct">0%</span></div>
-          <div class="skill-bar"><i></i></div>
-        </div>
-        <div class="skill reveal" data-level="80">
-          <div class="skill-head"><span>Networking</span><span class="skill-pct">0%</span></div>
-          <div class="skill-bar"><i></i></div>
-        </div>
-        <div class="skill reveal" data-level="75">
-          <div class="skill-head"><span>Pentesting / Recon</span><span class="skill-pct">0%</span></div>
-          <div class="skill-bar"><i></i></div>
-        </div>
-        <div class="skill reveal" data-level="70">
-          <div class="skill-head"><span>Web Security</span><span class="skill-pct">0%</span></div>
-          <div class="skill-bar"><i></i></div>
-        </div>
-        <div class="skill reveal" data-level="65">
-          <div class="skill-head"><span>Cloud / Docker</span><span class="skill-pct">0%</span></div>
-          <div class="skill-bar"><i></i></div>
+    <section class="trust-strip"><div class="container trust-content"><span>STACK DE ENTREGA</span><div>Next.js</div><div>Astro</div><div>Node.js</div><div>Python</div><div>Supabase</div><div>Vercel</div></div></section>
+
+    <section class="section container" id="servicos">
+      <div class="section-heading reveal"><div><span class="section-kicker">01 / SERVIÇOS</span><h2>Soluções enxutas para problemas reais.</h2></div><p>Sem software inflado. Cada projeto nasce com objetivo comercial claro, arquitetura proporcional e foco em colocar valor no ar rapidamente.</p></div>
+      <div class="services-grid">
+        <article class="service-card reveal"><span class="service-number">01</span><div class="service-icon">⌁</div><h3>Bots para WhatsApp</h3><p>Atendimento automatizado, qualificação de leads, respostas inteligentes e fluxos de vendas.</p><ul><li>Triagem automática</li><li>Funis de atendimento</li><li>Integração com sistemas</li></ul></article>
+        <article class="service-card featured reveal"><span class="service-number">02</span><div class="service-icon">◫</div><h3>Vitrines e landing pages</h3><p>Experiências premium, rápidas e mobile-first para apresentar produtos e converter visitas.</p><ul><li>Design orientado à conversão</li><li>Contato direto no WhatsApp</li><li>SEO e performance</li></ul></article>
+        <article class="service-card reveal"><span class="service-number">03</span><div class="service-icon">⚙</div><h3>Automação e sistemas web</h3><p>Painéis, integrações e ferramentas sob medida para eliminar tarefas repetitivas.</p><ul><li>Dashboards operacionais</li><li>Integrações com APIs</li><li>IA aplicada ao processo</li></ul></article>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projetos">
+      <div class="container">
+        <div class="section-heading reveal"><div><span class="section-kicker">02 / PROJETOS</span><h2>Produtos construídos com foco em uso real.</h2></div><p>Projetos reais em desenvolvimento e soluções comerciais que demonstram produto, engenharia e execução.</p></div>
+        <div class="projects-grid">
+          <article class="project-card project-large reveal">
+            <div class="project-top"><span class="project-badge">Produto digital • Repositório público</span><span>01</span></div>
+            <div class="project-mockup mockup-nk"><div class="mockup-phone"><div class="phone-header"></div><div class="phone-story"></div><div class="phone-card"></div><div class="phone-nav"></div></div><div class="mockup-glow"></div></div>
+            <div class="project-content"><h3>NK Plataforma</h3><p>Plataforma social mobile-first com feed, mensagens, gamificação e experiência PWA.</p><div class="tags"><span>Next.js</span><span>TypeScript</span><span>Supabase</span><span>PWA</span></div><div class="project-actions"><a href="https://github.com/Mansonware/Nk-Plataforma" target="_blank" rel="noopener noreferrer">Ver repositório ↗</a><a href="https://wa.me/5512996335539?text=Ol%C3%A1%2C%20Manson.%20Quero%20saber%20mais%20sobre%20a%20NK%20Plataforma." target="_blank" rel="noopener noreferrer">Saber mais</a></div></div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-top"><span class="project-badge">Automação comercial • Demo privada</span><span>02</span></div>
+            <div class="project-mockup mockup-leads"><div class="chart-bars"><i></i><i></i><i></i><i></i><i></i></div><div class="lead-row"><span></span><b>Lead qualificado</b><em>92</em></div><div class="lead-row"><span></span><b>Oportunidade local</b><em>87</em></div></div>
+            <div class="project-content"><h3>LeadHunter</h3><p>Coleta, organização e priorização de leads locais para prospecção comercial.</p><div class="tags"><span>Python</span><span>OSM</span><span>Dashboard</span></div><div class="project-actions"><a href="https://wa.me/5512996335539?text=Ol%C3%A1%2C%20Manson.%20Quero%20ver%20uma%20demonstra%C3%A7%C3%A3o%20do%20LeadHunter." target="_blank" rel="noopener noreferrer">Solicitar demonstração ↗</a></div></div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-top"><span class="project-badge">Vitrine + WhatsApp • Case privado</span><span>03</span></div>
+            <div class="project-mockup mockup-store"><div class="store-card"></div><div class="store-card"></div><div class="store-card"></div></div>
+            <div class="project-content"><h3>Loja da Nina</h3><p>Vitrine online integrada a um fluxo de atendimento e fechamento pelo WhatsApp.</p><div class="tags"><span>Astro</span><span>Tailwind</span><span>WhatsApp Bot</span></div><div class="project-actions"><a href="https://wa.me/5512996335539?text=Ol%C3%A1%2C%20Manson.%20Quero%20ver%20o%20case%20da%20Loja%20da%20Nina." target="_blank" rel="noopener noreferrer">Solicitar demonstração ↗</a></div></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ===== TERMINAL ===== -->
-    <section id="terminal" class="section">
-      <h2 class="section-title reveal"><span>03.</span> ./terminal</h2>
-      <p class="section-hint reveal">Terminal interativo — digite <code>help</code> e dê Enter. Funciona no toque também.</p>
-      <div class="terminal reveal" id="term">
-        <div class="term-bar">
-          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-          <span class="term-title">operator@mansonware: ~</span>
-        </div>
-        <div class="term-body" id="termBody">
-          <div class="term-line">Bem-vindo ao shell do Mansonware. Digite <span class="hl">help</span> para começar.</div>
-        </div>
-        <div class="term-input-row">
-          <span class="term-prompt">operator@mansonware:~$</span>
-          <input id="termInput" class="term-input" autocomplete="off" autocapitalize="off"
-                 spellcheck="false" aria-label="Entrada do terminal" placeholder="digite um comando...">
-        </div>
-      </div>
+    <section class="proof-section container reveal" aria-labelledby="proof-title">
+      <div class="proof-header"><span class="section-kicker">PROVA DE EXECUÇÃO</span><h2 id="proof-title">Trabalho demonstrado por entregas, não por números inventados.</h2></div>
+      <div class="proof-grid"><article><strong>Produto</strong><span>Plataforma social PWA</span><p>Arquitetura, banco, autenticação, deploy e experiência mobile.</p></article><article><strong>Automação</strong><span>Prospecção e atendimento</span><p>Coleta de oportunidades, priorização e fluxos comerciais.</p></article><article><strong>Conversão</strong><span>Vitrines e landing pages</span><p>Experiências rápidas com CTA direto para WhatsApp.</p></article><article><strong>Segurança</strong><span>Visão defensiva</span><p>Validação de entradas, permissões, privacidade e redução de risco.</p></article></div>
     </section>
 
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects" class="section">
-      <h2 class="section-title reveal"><span>04.</span> ./projetos</h2>
-      <div class="projects">
-        <article class="tilt reveal" tabindex="0">
-          <div class="tilt-inner">
-            <span class="proj-tag">automation</span>
-            <h3>recon-suite</h3>
-            <p>Conjunto de scripts para reconhecimento automatizado: enumeração de subdomínios, portas e fingerprinting em um pipeline só.</p>
-            <div class="proj-stack"><span>Python</span><span>Bash</span><span>Nmap</span></div>
-          </div>
-        </article>
-        <article class="tilt reveal" tabindex="0">
-          <div class="tilt-inner">
-            <span class="proj-tag">defense</span>
-            <h3>sentinel-log</h3>
-            <p>Monitor de logs em tempo real com alertas de comportamento suspeito e dashboard no terminal via curses.</p>
-            <div class="proj-stack"><span>Python</span><span>Linux</span><span>SIEM</span></div>
-          </div>
-        </article>
-        <article class="tilt reveal" tabindex="0">
-          <div class="tilt-inner">
-            <span class="proj-tag">tooling</span>
-            <h3>dotfiles</h3>
-            <p>Ambiente de operador pronto pra clonar: zsh, tmux, neovim e aliases afiados pra produtividade no shell.</p>
-            <div class="proj-stack"><span>zsh</span><span>tmux</span><span>nvim</span></div>
-          </div>
-        </article>
-      </div>
-    </section>
+    <section class="section container" id="processo"><div class="section-heading reveal"><div><span class="section-kicker">03 / PROCESSO</span><h2>Da ideia ao produto sem complicação.</h2></div><p>Um processo curto, transparente e adequado para negócios que precisam validar e lançar sem desperdiçar tempo.</p></div><div class="process-grid"><article class="process-item reveal"><span>01</span><h3>Diagnóstico</h3><p>Entendo o problema, o público e o resultado comercial esperado.</p></article><article class="process-item reveal"><span>02</span><h3>Protótipo</h3><p>Defino a experiência, os fluxos e o menor escopo que gera valor.</p></article><article class="process-item reveal"><span>03</span><h3>Construção</h3><p>Desenvolvo, valido e ajusto a solução em ciclos curtos.</p></article><article class="process-item reveal"><span>04</span><h3>Entrega</h3><p>Publico, documento e deixo a base pronta para evoluir.</p></article></div></section>
 
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="section contact">
-      <h2 class="section-title reveal"><span>05.</span> ./contato</h2>
-      <p class="reveal contact-lead">Quer trocar uma ideia, colaborar ou só dizer um <span class="hl">olá</span>?</p>
-      <div class="contact-links reveal">
-        <a class="btn btn-primary" href="https://github.com/Mansonware" target="_blank" rel="noopener noreferrer">GitHub →</a>
-        <a class="btn" href="mailto:mansonware0101@gmail.com">E-mail</a>
-      </div>
-    </section>
+    <section class="section about-section" id="sobre"><div class="container about-grid"><div class="about-copy reveal"><span class="section-kicker">04 / SOBRE</span><h2>Tecnologia com visão de produto e negócio.</h2><p>Sou Manson, desenvolvedor Full Stack focado em automação, inteligência artificial e produtos digitais. Trabalho conectando engenharia, experiência do usuário e objetivo comercial.</p><p>Minha abordagem é simples: construir a solução certa, com a complexidade necessária e uma experiência que transmita confiança.</p></div><div class="principles reveal"><div><span>01</span><h3>Entrega prática</h3><p>Prioridade para o que pode ser usado, testado e vendido.</p></div><div><span>02</span><h3>Design com função</h3><p>Visual premium sem sacrificar clareza, velocidade ou conversão.</p></div><div><span>03</span><h3>Arquitetura segura</h3><p>Base técnica organizada para crescer sem refazer tudo.</p></div></div></div></section>
+
+    <section class="cta-section container reveal"><div class="cta-panel"><span class="section-kicker">PRÓXIMO PASSO</span><h2>Tem um processo manual ou uma ideia parada?</h2><p>Vamos identificar uma solução simples, profissional e viável para colocar em produção.</p><div class="hero-actions"><a class="button button-primary" href="https://wa.me/5512996335539?text=Ol%C3%A1%2C%20Manson.%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20uma%20solu%C3%A7%C3%A3o%20para%20meu%20neg%C3%B3cio." target="_blank" rel="noopener noreferrer">Conversar sobre o projeto <span>↗</span></a><a class="button button-ghost" href="https://github.com/Mansonware" target="_blank" rel="noopener noreferrer">Ver GitHub</a></div></div></section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; <span id="year"></span> Mansonware — <span class="hl">root@portfolio</span>. Construído no terminal.</p>
-  </footer>
+  <a class="whatsapp-float" href="https://wa.me/5512996335539?text=Ol%C3%A1%2C%20Manson.%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer" aria-label="Conversar com Manson pelo WhatsApp"><span aria-hidden="true">✦</span><b>WhatsApp</b></a>
 
+  <footer class="footer container"><a class="brand" href="#top"><span class="brand-mark">M</span><span>MANSONWARE</span></a><p>Automação, IA e sistemas web para negócios.</p><span>© <span id="year"></span> Mansonware</span></footer>
   <script src="script.js"></script>
 </body>
 </html>
