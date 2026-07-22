@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0d1117,50:111827,100:22c55e&text=Mansonware%20Portfolio&fontColor=ffffff&fontSize=42&fontAlignY=40&desc=Full%20Stack%20Developer%20%7C%20Next.js%2015&descAlignY=62" alt="Mansonware Portfolio Banner" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0d1117,50:111827,100:22c55e&text=Mansonware%20Portfolio&fontColor=ffffff&fontSize=42&fontAlignY=40&desc=Full%20Stack%20Developer%20%7C%20Next.js%2015&descAlignY=62" alt="Animated waving banner with Mansonware Portfolio title and Full Stack Developer subtitle" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=600&size=22&duration=2500&pause=800&color=22C55E&center=true&vCenter=true&width=900&lines=Portf%C3%B3lio+premium+com+foco+em+performance+e+SEO;Next.js+15+%2B+TypeScript+%2B+TailwindCSS;Anima%C3%A7%C3%B5es+com+Framer+Motion+e+UX+moderna" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=600&size=22&duration=2500&pause=800&color=22C55E&center=true&vCenter=true&width=900&lines=Portf%C3%B3lio+premium+com+foco+em+performance+e+SEO;Next.js+15+%2B+TypeScript+%2B+TailwindCSS;Anima%C3%A7%C3%B5es+com+Framer+Motion+e+UX+moderna" alt="Animated text highlighting portfolio features: performance, SEO, Next.js 15, TypeScript, TailwindCSS and Framer Motion" />
 
 <p>
   <img src="https://img.shields.io/badge/Next.js-15-111827?style=for-the-badge&logo=nextdotjs" alt="Next.js 15" />
@@ -111,6 +111,6 @@ NEXT_PUBLIC_SITE_URL=https://SEU-DOMINIO-VERCEL
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&section=footer&height=120&color=0:0d1117,50:111827,100:22c55e" alt="Footer Wave" />
+<img src="https://capsule-render.vercel.app/api?type=waving&section=footer&height=120&color=0:0d1117,50:111827,100:22c55e" alt="Decorative waving footer animation" />
 
 </div>
