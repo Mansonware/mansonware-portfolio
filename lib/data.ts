@@ -1,4 +1,5 @@
-export const SITE_URL = "https://mansonware.github.io/mansonware-portfolio";
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://mansonware.github.io/mansonware-portfolio";
 
 export const SITE_NAME = "Manson";
 

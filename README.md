@@ -1,92 +1,116 @@
-# Manson — Portfolio
+<div align="center">
 
-Portfólio pessoal de **Manson**, Full Stack Developer, refeito do zero como uma aplicação
-premium construída com **Next.js 15**. O objetivo foi transformar um site estático em
-HTML/CSS/JS em um produto digital moderno, com animações refinadas, design system
-consistente e SEO de nível profissional.
+<img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0d1117,50:111827,100:22c55e&text=Mansonware%20Portfolio&fontColor=ffffff&fontSize=42&fontAlignY=40&desc=Full%20Stack%20Developer%20%7C%20Next.js%2015&descAlignY=62" alt="Mansonware Portfolio Banner" />
 
-## Stack
+<img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=600&size=22&duration=2500&pause=800&color=22C55E&center=true&vCenter=true&width=900&lines=Portf%C3%B3lio+premium+com+foco+em+performance+e+SEO;Next.js+15+%2B+TypeScript+%2B+TailwindCSS;Anima%C3%A7%C3%B5es+com+Framer+Motion+e+UX+moderna" alt="Typing SVG" />
 
-- **[Next.js 15](https://nextjs.org/)** (App Router)
+<p>
+  <img src="https://img.shields.io/badge/Next.js-15-111827?style=for-the-badge&logo=nextdotjs" alt="Next.js 15" />
+  <img src="https://img.shields.io/badge/TypeScript-5-0f172a?style=for-the-badge&logo=typescript" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/TailwindCSS-3-0f172a?style=for-the-badge&logo=tailwindcss" alt="Tailwind" />
+  <img src="https://img.shields.io/badge/Vercel-Deploy-000000?style=for-the-badge&logo=vercel" alt="Vercel" />
+</p>
+
+</div>
+
+---
+
+## ✨ Sobre
+
+Este repositório contém o portfólio pessoal do **Manson**, refeito em **Next.js 15** com:
+
+- UI moderna e responsiva
+- animações fluidas com Framer Motion
+- SEO técnico completo (metadata, sitemap, robots, JSON-LD)
+- arquitetura em componentes reutilizáveis
+
+---
+
+## 🧱 Stack
+
+- **Next.js 15** (App Router)
 - **React 18** + **TypeScript**
-- **TailwindCSS 3** com design tokens customizados
-- **Framer Motion** para animações (fade-in on scroll, tilt 3D, stagger)
-- **Lucide React** para ícones
-- `clsx` + `tailwind-merge` para composição de classes (`cn()`)
+- **TailwindCSS 3**
+- **Framer Motion**
+- **Lucide React**
+- `clsx` + `tailwind-merge`
 
-## Como rodar o projeto
+---
+
+## 🚀 Rodando localmente
 
 ```bash
-# instalar dependências
 npm install
-
-# ambiente de desenvolvimento
 npm run dev
+```
 
-# build de produção
+Acesse: `http://localhost:3000`
+
+Comandos úteis:
+
+```bash
+npm run lint
 npm run build
 npm run start
-
-# lint
-npm run lint
 ```
 
-O projeto estará disponível em `http://localhost:3000`.
+---
 
-## Estrutura de pastas
+## 📁 Estrutura
 
-```
+```txt
 /app
-  layout.tsx      # metadata, fontes, JSON-LD (schema.org Person)
-  page.tsx        # composição das seções da home
-  globals.css     # design tokens, scrollbar, seleção, utilitários
-  robots.ts       # robots.txt dinâmico
-  sitemap.ts       # sitemap.xml dinâmico
+  layout.tsx
+  page.tsx
+  globals.css
+  robots.ts
+  sitemap.ts
 /components
-  Navbar.tsx       # navbar sticky com transição transparente → blur
-  Hero.tsx         # hero fullscreen com stacks, CTAs e efeitos de fundo
-  About.tsx        # trajetória e pilares
-  Projects.tsx      # grid de projetos (Melt OS, Sistema Restaurante, Capivari Atelier)
-  ProjectCard.tsx   # card com efeito de tilt 3D reativo ao mouse
-  Skills.tsx        # skills agrupadas por categoria com hover states
-  Experience.tsx    # timeline de experiência Full Stack
-  Differentials.tsx  # grid de diferenciais
-  Footer.tsx         # contato e links sociais
-  Reveal.tsx          # wrapper de animação fade-in-on-scroll (useInView)
+  Navbar.tsx
+  Hero.tsx
+  About.tsx
+  Projects.tsx
+  ProjectCard.tsx
+  Skills.tsx
+  Experience.tsx
+  Differentials.tsx
+  Footer.tsx
+  Reveal.tsx
 /lib
-  data.ts   # todo o conteúdo estático (projetos, skills, experiência, etc.)
-  utils.ts  # utilitário cn() para composição de classes Tailwind
+  data.ts
+  utils.ts
 ```
 
-## Design
+---
 
-- Tema escuro premium: `#0a0a0a` / `#111111` / `#1a1a1a`
-- Cor de destaque: verde `#22c55e`, usada em glows, badges e CTAs
-- Glassmorphism sutil, grid de fundo, gradientes radiais e blur
-- Tipografia com hierarquia clara e espaçamento generoso entre seções
+## 🌐 Deploy no Vercel
 
-## Animações
+Se o deploy não subir, valide:
 
-- Fade-in ao rolar a página, usando `useInView` do Framer Motion
-- Animações staggered para listas de tags e cards
-- Tilt 3D reativo ao mouse nos cards de projeto
-- Glow reativo ao hover em cards e botões
+1. **Framework Preset**: Next.js
+2. **Root Directory**: `/` (raiz do repositório)
+3. **Build Command**: `npm run build`
+4. **Install Command**: `npm install`
+5. **Node.js**: 20+
+6. Variável de ambiente em produção:
 
-## SEO
+```bash
+NEXT_PUBLIC_SITE_URL=https://SEU-DOMINIO-VERCEL
+```
 
-- Metadados completos (title, description, canonical) em `app/layout.tsx`
-- Open Graph e Twitter Cards com imagem dedicada
-- `robots.ts` e `sitemap.ts` gerados dinamicamente
-- JSON-LD `schema.org/Person` com informações profissionais
+> O projeto já compila localmente com `npm run build`, então quando falha no Vercel normalmente é configuração de projeto, domínio ou variável de ambiente.
 
-## Melhorias em relação à versão anterior
+---
 
-A versão anterior era um site estático (`index.html` + `style.css` + `script.js`).
-Esta versão traz:
+## 👨‍💻 Autor
 
-- Arquitetura em componentes React reutilizáveis e tipados
-- Animações profissionais e performáticas via Framer Motion
-- SEO técnico completo (sitemap, robots, JSON-LD, Open Graph)
-- Design system consistente via Tailwind + tokens customizados
-- Conteúdo real de projetos (Melt OS, Sistema Restaurante, Capivari Atelier)
-- Seções de Skills, Experiência e Diferenciais com apresentação visual, não listas simples
+**Mansonware**
+
+- GitHub: https://github.com/Mansonware
+- LinkedIn: https://www.linkedin.com/in/mansonware
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&section=footer&height=120&color=0:0d1117,50:111827,100:22c55e" alt="Footer Wave" />
+
+</div>
