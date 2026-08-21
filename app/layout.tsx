@@ -10,17 +10,18 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   keywords: [
-    "Manson",
-    "Full Stack Developer",
-    "React",
+    "Mansonware",
+    "desenvolvimento de sites",
+    "automação WhatsApp",
+    "automação empresarial",
+    "integrações API",
+    "vitrine digital",
+    "SaaS",
     "Next.js",
-    "Java",
-    "Spring Boot",
+    "Astro",
     "Node.js",
+    "Python",
     "TypeScript",
-    "PostgreSQL",
-    "Docker",
-    "Portfólio",
   ],
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
@@ -60,22 +61,19 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
+  "@type": "ProfessionalService",
   name: SITE_NAME,
   url: SITE_URL,
-  jobTitle: "Full Stack Developer",
   description: SITE_DESCRIPTION,
-  sameAs: ["https://github.com/Mansonware", "https://www.linkedin.com/in/mansonware"],
-  knowsAbout: [
-    "React",
-    "Next.js",
-    "Java",
-    "Spring Boot",
-    "Node.js",
-    "TypeScript",
-    "PostgreSQL",
-    "Docker",
+  areaServed: "BR",
+  serviceType: [
+    "Desenvolvimento de sites",
+    "Vitrines digitais",
+    "Automação de processos",
+    "Integrações de sistemas",
+    "Desenvolvimento de software sob medida",
   ],
+  sameAs: ["https://github.com/Mansonware", "https://www.linkedin.com/in/mansonware"],
 };
 
 export default function RootLayout({
@@ -84,10 +82,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-BR"
-      className="h-full scroll-smooth antialiased"
-    >
+    <html lang="pt-BR" className="h-full scroll-smooth antialiased">
       <head>
         <script
           type="application/ld+json"
