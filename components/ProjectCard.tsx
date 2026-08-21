@@ -97,7 +97,7 @@ export default function ProjectCard({
 
         <dl className="grid gap-3 border-t border-border pt-5 text-sm">
           <div>
-            <dt className="font-medium text-text">Desafio</dt>
+            <dt className="font-medium text-text">Problema</dt>
             <dd className="mt-1 text-text-muted">{project.challenge}</dd>
           </div>
           <div>
@@ -105,33 +105,37 @@ export default function ProjectCard({
             <dd className="mt-1 text-text-muted">{project.solution}</dd>
           </div>
           <div>
-            <dt className="font-medium text-accent">Resultado</dt>
+            <dt className="font-medium text-accent">Estado atual</dt>
             <dd className="mt-1 text-text-muted">{project.result}</dd>
           </div>
         </dl>
 
-        <div className="mt-2 flex gap-3">
-          <Link
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-surface-2 px-4 py-2 text-sm font-medium text-text transition-colors hover:border-text-subtle"
-          >
-            <Github size={16} />
-            GitHub
-          </Link>
-          {project.demo && (
-            <Link
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-background transition-transform hover:scale-[1.03]"
-            >
-              Demo
-              <ArrowUpRight size={16} />
-            </Link>
-          )}
-        </div>
+        {(project.demo || project.github) && (
+          <div className="mt-2 flex flex-wrap gap-3">
+            {project.demo && (
+              <Link
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-background transition-transform hover:scale-[1.03]"
+              >
+                Ver projeto
+                <ArrowUpRight size={16} />
+              </Link>
+            )}
+            {project.github && (
+              <Link
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-surface-2 px-4 py-2 text-sm font-medium text-text transition-colors hover:border-text-subtle"
+              >
+                <Github size={16} />
+                GitHub
+              </Link>
+            )}
+          </div>
+        )}
       </div>
     </motion.article>
   );
