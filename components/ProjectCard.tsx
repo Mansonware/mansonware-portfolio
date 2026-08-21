@@ -4,12 +4,13 @@ import { useRef } from "react";
 import Link from "next/link";
 import {
   motion,
+  useMotionTemplate,
   useMotionValue,
   useReducedMotion,
   useSpring,
   useTransform,
 } from "framer-motion";
-import { ArrowUpRight, ExternalLink, Github, Radio } from "lucide-react";
+import { ArrowUpRight, Github, Radio } from "lucide-react";
 import type { Project } from "@/lib/data";
 
 export default function ProjectCard({
@@ -34,6 +35,7 @@ export default function ProjectCard({
   });
   const glowX = useTransform(x, [-0.5, 0.5], ["10%", "90%"]);
   const glowY = useTransform(y, [-0.5, 0.5], ["10%", "90%"]);
+  const spotlight = useMotionTemplate`radial-gradient(circle at ${glowX} ${glowY}, rgba(86,255,120,0.16), transparent 42%)`;
 
   function handleMouseMove(event: React.MouseEvent<HTMLElement>) {
     if (reduceMotion) return;
@@ -65,9 +67,7 @@ export default function ProjectCard({
       <motion.div
         aria-hidden
         className="pointer-events-none absolute -inset-px z-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{
-          background: `radial-gradient(circle at ${glowX} ${glowY}, rgba(86,255,120,0.16), transparent 42%)`,
-        }}
+        style={{ background: spotlight }}
       />
 
       <div className={`relative overflow-hidden border-b border-border bg-gradient-to-br ${project.gradient} p-6 sm:p-8`}>
@@ -153,11 +153,6 @@ export default function ProjectCard({
                 >
                   <Github size={15} /> GitHub
                 </Link>
-              )}
-              {!project.demo && !project.github && (
-                <span className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border bg-background/50 px-4 text-sm font-medium text-text-muted">
-                  <ExternalLink size={15} /> Case técnico
-                </span>
               )}
             </div>
           )}
