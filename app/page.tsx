@@ -2,8 +2,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
-import Skills from "@/components/Skills";
-import Experience from "@/components/Experience";
 import Differentials from "@/components/Differentials";
 import Footer from "@/components/Footer";
 
@@ -15,8 +13,6 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
-        <Skills />
-        <Experience />
         <Differentials />
       </main>
       <Footer />
