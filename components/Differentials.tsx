@@ -31,17 +31,21 @@ export default function Differentials() {
   return (
     <section
       id="diferenciais"
-      aria-label="Diferenciais"
+      aria-label="Como trabalho"
       className="relative py-24 sm:py-32"
     >
       <div className="section-container">
         <Reveal>
           <span className="text-sm font-medium uppercase tracking-widest text-accent">
-            Diferenciais
+            Como trabalho
           </span>
-          <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-text sm:text-4xl">
-            O que faz a diferença na entrega.
+          <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-text sm:text-4xl">
+            Menos complexidade desnecessária. Mais solução no ar.
           </h2>
+          <p className="mt-4 max-w-2xl text-lg text-text-muted">
+            O processo prioriza clareza, escopo controlado e entregas que já possam
+            ser usadas, testadas e vendidas.
+          </p>
         </Reveal>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

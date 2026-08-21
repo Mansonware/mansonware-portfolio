@@ -14,12 +14,12 @@ export default function Projects() {
           <span className="text-sm font-medium uppercase tracking-widest text-accent">
             Projetos
           </span>
-          <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-text sm:text-4xl">
-            Produtos construídos com foco em uso real.
+          <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-text sm:text-4xl">
+            Soluções construídas para problemas de negócio diferentes.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-text-muted">
-            Uma seleção dos projetos que melhor representam minha forma de
-            pensar produto, arquitetura e execução.
+            Alguns exemplos de como produto, automação e desenvolvimento podem
+            virar uma solução simples de entender e usar.
           </p>
         </Reveal>
 

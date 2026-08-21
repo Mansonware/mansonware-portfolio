@@ -5,60 +5,50 @@ import { ABOUT_TOPICS } from "@/lib/data";
 const PILLARS = [
   {
     icon: Code2,
-    title: "Full Stack de verdade",
+    title: "Sites e vitrines que ajudam a vender",
     description:
-      "Do banco de dados à interface, passando por arquitetura, APIs e deploy — end-to-end.",
-  },
-  {
-    icon: Rocket,
-    title: "Produtos, não apenas código",
-    description:
-      "Cada decisão técnica é guiada por impacto real no produto e na experiência do usuário.",
+      "Landing pages, catálogos e experiências de compra pensadas para mobile, clareza e conversão.",
   },
   {
     icon: Sparkles,
-    title: "Tecnologia + IA",
+    title: "Automação e integrações",
     description:
-      "Uso estratégico de inteligência artificial para acelerar entregas e resolver problemas complexos.",
+      "WhatsApp, APIs, IA e ferramentas conectadas para reduzir tarefas repetitivas e acelerar atendimento e operação.",
+  },
+  {
+    icon: Rocket,
+    title: "Sistemas sob medida",
+    description:
+      "MVPs, SaaS e painéis internos construídos com escopo controlado, baixo custo operacional e evolução incremental.",
   },
 ];
 
 export default function About() {
   return (
-    <section id="sobre" aria-label="Sobre" className="relative py-24 sm:py-32">
+    <section id="sobre" aria-label="Serviços" className="relative py-24 sm:py-32">
       <div className="section-container">
         <Reveal>
           <span className="text-sm font-medium uppercase tracking-widest text-accent">
-            Sobre
+            Serviços
           </span>
-          <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-text sm:text-4xl">
-            Trajetória construída resolvendo problemas reais.
+          <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-text sm:text-4xl">
+            Tecnologia aplicada ao que realmente move o negócio.
           </h2>
         </Reveal>
 
         <div className="mt-12 grid gap-12 lg:grid-cols-2">
           <Reveal delay={0.1}>
             <p className="text-lg leading-relaxed text-text-muted">
-              Sou um desenvolvedor <span className="text-text">Full Stack</span>{" "}
-              com trajetória construída em torno de produtos digitais que
-              realmente resolvem problemas de negócio. Trabalho com{" "}
-              <span className="text-text">React</span>,{" "}
-              <span className="text-text">Next.js</span>,{" "}
-              <span className="text-text">Java</span>,{" "}
-              <span className="text-text">Spring Boot</span> e{" "}
-              <span className="text-text">Node.js</span> para construir desde
-              APIs robustas até interfaces refinadas.
+              A Mansonware desenvolve soluções digitais para empresas que precisam
+              <span className="text-text"> vender, automatizar ou organizar melhor a operação</span>.
+              O ponto de partida não é a tecnologia mais complexa: é a solução mais
+              simples que resolve o problema e consegue ir para produção.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-text-muted">
-              Minha stack inclui{" "}
-              <span className="text-text">TypeScript</span>,{" "}
-              <span className="text-text">PostgreSQL</span>,{" "}
-              <span className="text-text">Docker</span>,{" "}
-              <span className="text-text">Prisma</span> e{" "}
-              <span className="text-text">Supabase</span>, aplicados na
-              construção de SaaS, PWAs e arquiteturas escaláveis — sempre com
-              olhar atento para performance, segurança e inteligência
-              artificial aplicada.
+              O trabalho cobre do front-end ao back-end, APIs, bancos de dados,
+              integrações, automações e deploy. Quando IA faz sentido, ela entra para
+              reduzir trabalho manual ou aumentar capacidade — não só para adicionar
+              uma funcionalidade chamativa.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
