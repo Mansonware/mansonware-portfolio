@@ -1,4 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "nextjs"
+  "name": "mansonware",
+  "framework": "nextjs",
+  "alias": ["mansonware.vercel.app"]
 }
