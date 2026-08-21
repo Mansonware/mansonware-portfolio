@@ -3,10 +3,10 @@ export const SITE_URL =
 
 export const SITE_NAME = "Mansonware";
 
-export const SITE_TITLE = "Mansonware — Sites, automações e soluções digitais";
+export const SITE_TITLE = "Mansonware — Sites, automações e sistemas que impressionam";
 
 export const SITE_DESCRIPTION =
-  "Sites, vitrines digitais, automações, integrações e sistemas sob medida para empresas que querem vender melhor, reduzir trabalho manual e colocar projetos no ar com rapidez.";
+  "Sites, vitrines digitais, automações, integrações e sistemas sob medida com experiência premium, foco em conversão e execução enxuta.";
 
 export const SOCIAL_LINKS = {
   github: "https://github.com/Mansonware",
@@ -19,8 +19,8 @@ export const SOCIAL_LINKS = {
 
 export const NAV_LINKS = [
   { label: "Serviços", href: "#sobre" },
-  { label: "Projetos", href: "#projetos" },
-  { label: "Como trabalho", href: "#diferenciais" },
+  { label: "Cases", href: "#projetos" },
+  { label: "Processo", href: "#diferenciais" },
   { label: "Contato", href: "#contato" },
 ];
 
@@ -163,27 +163,19 @@ export type Differential = {
 
 export const DIFFERENTIALS: Differential[] = [
   {
-    title: "Foco em resultado",
-    description: "A tecnologia entra para ajudar a vender, automatizar ou reduzir uma dor real do negócio.",
+    title: "Entender o problema",
+    description: "Objetivo, público, operação atual e impacto comercial antes de escolher tecnologia.",
   },
   {
-    title: "MVP enxuto",
-    description: "Primeiro colocamos a solução útil no ar; complexidade só entra quando existe motivo comercial.",
+    title: "Cortar até o essencial",
+    description: "O MVP fica com o que vende, automatiza, reduz risco ou comprova a oportunidade.",
   },
   {
-    title: "Mobile-first",
-    description: "Experiências pensadas para o celular, onde boa parte dos clientes realmente navega e compra.",
+    title: "Construir e testar rápido",
+    description: "Entrega incremental, integração real e validação mobile antes de polimento infinito.",
   },
   {
-    title: "Integrações práticas",
-    description: "WhatsApp, APIs, pagamentos, bancos de dados e ferramentas existentes trabalhando em conjunto.",
-  },
-  {
-    title: "Automação útil",
-    description: "IA e automação aplicadas quando reduzem trabalho manual, aceleram atendimento ou aumentam capacidade.",
-  },
-  {
-    title: "Entrega incremental",
-    description: "Mudanças pequenas, testáveis e fáceis de evoluir, evitando projetos eternos e refações desnecessárias.",
+    title: "Colocar no ar e medir",
+    description: "Produção primeiro; dados e resposta do mercado decidem a próxima versão.",
   },
 ];
