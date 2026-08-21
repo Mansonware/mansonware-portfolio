@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, BriefcaseBusiness } from "lucide-react";
-import { HERO_STACK } from "@/lib/data";
+import { ArrowRight, MessageCircle } from "lucide-react";
+import { HERO_STACK, SOCIAL_LINKS } from "@/lib/data";
 
 const container = {
   hidden: { opacity: 0 },
@@ -88,11 +88,13 @@ export default function Hero() {
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="#contato"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-medium text-text transition-colors hover:border-text-subtle hover:bg-surface-2"
+              href={SOCIAL_LINKS.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-medium text-text transition-colors hover:border-accent/40 hover:bg-surface-2"
             >
-              <BriefcaseBusiness size={16} />
-              Solicitar orçamento
+              <MessageCircle size={16} />
+              Falar sobre meu projeto
             </a>
           </motion.div>
         </div>

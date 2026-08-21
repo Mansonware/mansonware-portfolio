@@ -12,7 +12,9 @@ export const SOCIAL_LINKS = {
   github: "https://github.com/Mansonware",
   linkedin: "https://www.linkedin.com/in/mansonware",
   email: "mailto:contato@mansonware.dev",
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_URL || "",
+  whatsapp:
+    process.env.NEXT_PUBLIC_WHATSAPP_URL ||
+    "https://wa.me/5512996335539?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Mansonware%20e%20quero%20solicitar%20um%20or%C3%A7amento%20para%20um%20projeto.",
 };
 
 export const NAV_LINKS = [

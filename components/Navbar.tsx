@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Menu, X } from "lucide-react";
+import { Github, Linkedin, Menu, MessageCircle, X } from "lucide-react";
 import { NAV_LINKS, SOCIAL_LINKS } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
@@ -76,9 +76,12 @@ export default function Navbar() {
             <Linkedin size={18} />
           </a>
           <a
-            href="#contato"
-            className="rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-medium text-accent transition-colors hover:bg-accent/20"
+            href={SOCIAL_LINKS.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-medium text-accent transition-colors hover:bg-accent/20"
           >
+            <MessageCircle size={16} />
             Solicitar orçamento
           </a>
         </div>
@@ -112,6 +115,18 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href={SOCIAL_LINKS.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-medium text-accent transition-colors hover:bg-accent/20"
+              >
+                <MessageCircle size={16} />
+                Solicitar orçamento
+              </a>
+            </li>
             <li className="flex gap-4 pt-2">
               <a
                 href={SOCIAL_LINKS.github}
