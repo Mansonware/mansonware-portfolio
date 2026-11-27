@@ -3,10 +3,10 @@ export const SITE_URL =
 
 export const SITE_NAME = "Mansonware";
 
-export const SITE_TITLE = "Mansonware — Sites, automações e sistemas que impressionam";
+export const SITE_TITLE = "Mansonware — Sites, IA, automações e sistemas sob medida";
 
 export const SITE_DESCRIPTION =
-  "Sites, vitrines digitais, automações, integrações e sistemas sob medida com experiência premium, foco em conversão e execução enxuta.";
+  "Desenvolvimento de sites, e-commerce, inteligência artificial, automação de WhatsApp e sistemas sob medida. Soluções digitais com foco em conversão e eficiência para empresas.";
 
 export const SOCIAL_LINKS = {
   github: "https://github.com/Mansonware",
